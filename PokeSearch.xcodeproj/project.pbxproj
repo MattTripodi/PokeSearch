@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080276BA0DCC2C4891A79C8E /* Pods_PokeSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5637217D7636179B6D9983CB /* Pods_PokeSearch.framework */; };
 		EEB76B371F1ACE520093FE3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB76B361F1ACE520093FE3D /* AppDelegate.swift */; };
 		EEB76B391F1ACE520093FE3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB76B381F1ACE520093FE3D /* ViewController.swift */; };
 		EEB76B3C1F1ACE520093FE3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB76B3A1F1ACE520093FE3D /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5637217D7636179B6D9983CB /* Pods_PokeSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokeSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		788C63E9CC3AED52E60491D6 /* Pods-PokeSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokeSearch/Pods-PokeSearch.debug.xcconfig"; sourceTree = "<group>"; };
+		D661658EC56D51354263335F /* Pods-PokeSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokeSearch/Pods-PokeSearch.release.xcconfig"; sourceTree = "<group>"; };
 		EEB76B331F1ACE520093FE3D /* PokeSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB76B361F1ACE520093FE3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEB76B381F1ACE520093FE3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				080276BA0DCC2C4891A79C8E /* Pods_PokeSearch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7DAE1281221D692A1A5E5E5B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5637217D7636179B6D9983CB /* Pods_PokeSearch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B157A66666E5DC5C953807CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				788C63E9CC3AED52E60491D6 /* Pods-PokeSearch.debug.xcconfig */,
+				D661658EC56D51354263335F /* Pods-PokeSearch.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EEB76B2A1F1ACE520093FE3D = {
 			isa = PBXGroup;
 			children = (
 				EEB76B351F1ACE520093FE3D /* PokeSearch */,
 				EEB76B341F1ACE520093FE3D /* Products */,
+				B157A66666E5DC5C953807CB /* Pods */,
+				7DAE1281221D692A1A5E5E5B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEB76B451F1ACE520093FE3D /* Build configuration list for PBXNativeTarget "PokeSearch" */;
 			buildPhases = (
+				BC0AD45393669C695352D20A /* [CP] Check Pods Manifest.lock */,
 				EEB76B2F1F1ACE520093FE3D /* Sources */,
 				EEB76B301F1ACE520093FE3D /* Frameworks */,
 				EEB76B311F1ACE520093FE3D /* Resources */,
+				723DF006FCAB27147744D4D0 /* [CP] Embed Pods Frameworks */,
+				B343BE9D76AFCF86D33FA341 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		723DF006FCAB27147744D4D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PokeSearch/Pods-PokeSearch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B343BE9D76AFCF86D33FA341 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PokeSearch/Pods-PokeSearch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC0AD45393669C695352D20A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EEB76B2F1F1ACE520093FE3D /* Sources */ = {
@@ -265,6 +340,7 @@
 		};
 		EEB76B461F1ACE520093FE3D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 788C63E9CC3AED52E60491D6 /* Pods-PokeSearch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J5P95JSAVD;
@@ -278,6 +354,7 @@
 		};
 		EEB76B471F1ACE520093FE3D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D661658EC56D51354263335F /* Pods-PokeSearch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J5P95JSAVD;
