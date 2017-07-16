@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import GeoFire
+import MapKit
 
 class ViewController: UIViewController {
+	
+	var geoFire: GeoFire!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
