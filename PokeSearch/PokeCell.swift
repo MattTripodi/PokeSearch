@@ -13,5 +13,21 @@ class PokeCell: UICollectionViewCell {
 	@IBOutlet weak var thumbImg: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
 	
-    
+	//index of poke in pokmon array
+	
+	func configureCell(poke: String){
+		var indexNumber: Int
+		
+		nameLabel.text = poke.capitalized
+		//index of poke in pokemon Array
+		indexNumber = pokemon.index(of: poke)!
+		thumbImg.image = UIImage(named: "\(indexNumber + 1)")
+		
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+		layer.cornerRadius = 5.0
+		
+	}
 }

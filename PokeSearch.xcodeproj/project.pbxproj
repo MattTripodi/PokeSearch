@@ -121,11 +121,11 @@
 				EEB76B671F1BBB150093FE3D /* Controller */,
 				EEB76B361F1ACE520093FE3D /* AppDelegate.swift */,
 				EEB76B641F1B01060093FE3D /* PokeFinder-Bridging-Header.h */,
-				EEB76B421F1ACE520093FE3D /* Info.plist */,
-				EEB76B481F1ACE840093FE3D /* GoogleService-Info.plist */,
-				EEB76B3D1F1ACE520093FE3D /* Assets.xcassets */,
 				EEB76B3A1F1ACE520093FE3D /* Main.storyboard */,
 				EEB76B3F1F1ACE520093FE3D /* LaunchScreen.storyboard */,
+				EEB76B3D1F1ACE520093FE3D /* Assets.xcassets */,
+				EEB76B421F1ACE520093FE3D /* Info.plist */,
+				EEB76B481F1ACE840093FE3D /* GoogleService-Info.plist */,
 			);
 			path = PokeSearch;
 			sourceTree = "<group>";

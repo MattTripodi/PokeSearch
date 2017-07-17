@@ -11,7 +11,7 @@ import GeoFire
 import MapKit
 import FirebaseDatabase
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, MyProtocol {
 	
 	// IBOutlets 
 	@IBOutlet weak var mapView: MKMapView!
@@ -20,6 +20,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 	var mapHasCenteredOnce = false
 	var geoFire: GeoFire!
 	var geoFireRef: DatabaseReference!
+	
+	var valueSentFromPokemonCollectionView: Int?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -77,9 +79,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 		if annotation.isKind(of: MKUserLocation.self) {
 			annotaionView = MKAnnotationView(annotation: annotation, reuseIdentifier: "User")
 			annotaionView?.image = UIImage(named: "ash")
+			
 		} else if let deqAnno = mapView.dequeueReusableAnnotationView(withIdentifier: annoIdentifier) {
 			annotaionView = deqAnno
 			annotaionView?.annotation = annotation
+			
 		} else {
 			let av = MKAnnotationView(annotation: annotation, reuseIdentifier: annoIdentifier)
 			av.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
@@ -148,10 +152,25 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 	// IBActions
 	@IBAction func spotRandomPokemon(_ sender: Any) {
 		
-		let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+		// Modify this function for the exercise
+//		let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+//		
+//		let rand = arc4random_uniform(151) + 1
+//		createSighting(forLocation: loc, withPokemon: Int(rand))
 		
-		let rand = arc4random_uniform(151) + 1
-		createSighting(forLocation: loc, withPokemon: Int(rand))
+		let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "PokemonListVC") as! PokemonListVC
+		
+		secondViewController.delegate = self
+		
+		present(secondViewController, animated: true, completion: nil)
+	}
+	
+	//Function created to conform to MyProtocol
+	func setResultOfPokeSelection(valueSent: Int) {
+		
+		self.valueSentFromPokemonCollectionView = valueSent
+		let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+		createSighting(forLocation: loc, withPokemon: self.valueSentFromPokemonCollectionView!)
 	}
 	
 }
